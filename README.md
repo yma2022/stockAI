@@ -34,7 +34,7 @@ This project is a web-based stock analysis tool that provides comprehensive insi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/stock-analysis-tool.git
+   git clone https://github.com/yma2022/stockAI.git
    cd stock-analysis-tool
    ```
 
