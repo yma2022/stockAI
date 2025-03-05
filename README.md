@@ -2,7 +2,8 @@
 
 This project is a web-based stock analysis tool that provides comprehensive insights for any publicly traded company. It fetches real-time stock data, news, financial metrics, and generates AI-powered analysis to help users make informed investment decisions.
 
-![Stock Analysis Tool Screenshot](https://example.com/screenshot.png)
+![Stock Analysis Tool Screenshot](https://github.com/user-attachments/assets/f82d3809-1193-43d7-bbb8-bd0ab22eff91)
+
 
 ## Features
 
