@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .analysis-result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* Add specific styling for images */
+        .analysis-result img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        /* Make tables responsive */
+        .analysis-result table {
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+        }
+        /* Improve table styling */
+        .analysis-result table th,
+        .analysis-result table td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Stock Analysis Tool</h1>
+        
+        <form method="POST" id="stockForm">
+            <div class="mb-3">
+                <label for="ticker" class="form-label">Enter Stock Ticker:</label>
+                <input type="text" class="form-control" id="ticker" name="ticker" 
+                       placeholder="e.g., AAPL, MSFT, GOOGL" value="{{ ticker or '' }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="analyzeBtn">Analyze Stock</button>
+        </form>
+        
+        <div class="loading" id="loadingIndicator">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Analyzing stock data. This may take a minute...</p>
+        </div>
+        
+        {% if analysis_result %}
+        <div class="analysis-result">
+            <div>{{ analysis_result }}</div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <script>
+        document.getElementById('stockForm').addEventListener('submit', function() {
+            document.getElementById('analyzeBtn').disabled = true;
+            document.getElementById('loadingIndicator').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 
